@@ -3,7 +3,6 @@ import "./css/App.css";
 import ListFavourites from "./Components/ListFavourites";
 import ListResults from "./Components/ListResults";
 import Search from "./Components/Search";
-import { URL_API } from "./config/config";
 import { FAVOURITES_URL } from "./config/config";
 
 function App() {
@@ -15,12 +14,15 @@ function App() {
 
   // Making an API call on button click
   const SearchHandler = () => {
-    fetch(`${URL_API}${searchString}&media=${searchType}&limit=10`, {
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-    })
+    fetch(
+      `${FAVOURITES_URL}search?term=${searchString}&media=${searchType}&limit=10`,
+      {
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      }
+    )
       .then((res) => {
         return res.json();
       })

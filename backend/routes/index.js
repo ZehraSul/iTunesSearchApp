@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const fs = require("fs");
+const request = require("request");
 
 // Getting items array from items.json
 const favouritesArr = () => {
@@ -60,12 +61,36 @@ const handleDelete = (req, res) => {
   }
 };
 
+//handleSearch method
+const handleSearch = (req, res) => {
+  const term = req.query.term;
+  const media = req.query.media;
+  const limit = req.query.limit;
+
+  request(
+    {
+      url: `https://itunes.apple.com/search?term=${term}&media=${media}&limit=${limit}`,
+    },
+    (error, response, body) => {
+      if (error || response.statusCode !== 200) {
+        return res.status(500).json({ type: "error", message: err.message });
+      }
+
+      res.json(JSON.parse(body));
+    }
+  );
+};
+
 // Create - POST
 router.post("/create", handleCreate);
 
 // Read - GET
 // Reading items from the items.json file by calling favouritesArr function
 router.get("/", handleGet);
+
+// Search - GET
+// Search iTunes API
+router.get("/search", handleSearch);
 
 // Delete
 router.delete("/delete/:id", handleDelete);
