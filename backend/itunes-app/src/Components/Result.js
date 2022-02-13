@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
+import { FAVOURITES_URL } from "../config/config";
 import "../css/Result.css";
 
 function Result({
@@ -18,7 +19,7 @@ function Result({
   const favouriteHandler = (e) => {
     // when the favourite button is clicked a POST call to the api is made to create the favourited item in the favourites array.
     e.preventDefault();
-    fetch("http://localhost:8000/api/create", {
+    fetch(`${FAVOURITES_URL}create`, {
       method: "POST",
       headers: {
         Accept: "application/json",
