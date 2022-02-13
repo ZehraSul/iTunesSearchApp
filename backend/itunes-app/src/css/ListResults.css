@@ -1,0 +1,9 @@
+/* Styling for ListResults.js */
+
+h2 {
+  padding: 50px 0px 50px 0px;
+  font-size: 3vw;
+  background: linear-gradient(to right, #ff5d51 5%, #9671fc 50%, #03c7fd 95%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

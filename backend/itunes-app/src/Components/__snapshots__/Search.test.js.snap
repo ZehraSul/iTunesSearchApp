@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <div
+    className="mb-3 input-group"
+    style={
+      Object {
+        "margin": "auto",
+        "paddingTop": "2%",
+        "width": "50%",
+      }
+    }
+  >
+    <input
+      aria-label="Text input with dropdown button"
+      className="form-control"
+      onChange={[Function]}
+      placeholder="Search"
+    />
+    <select
+      align="end"
+      className="form-select"
+      id="input-group-dropdown-2"
+      onChange={[Function]}
+      variant="outline-secondary"
+    >
+      <option
+        disabled={true}
+        hidden={true}
+        selected={true}
+        value=""
+      >
+        Media Type
+      </option>
+      <option
+        value="movie"
+      >
+        Movies
+      </option>
+      <option
+        value="podcast"
+      >
+        Podcasts
+      </option>
+      <option
+        value="music"
+      >
+        Music
+      </option>
+      <option
+        value="musicVideo"
+      >
+        Music Video
+      </option>
+      <option
+        value="shortFilm"
+      >
+        Short Film
+      </option>
+      <option
+        value="tvShow"
+      >
+        TV Show
+      </option>
+      <option
+        value="ebook"
+      >
+        eBook
+      </option>
+      <option
+        value="all"
+      >
+        All
+      </option>
+    </select>
+    <button
+      className="btn btn-danger"
+      disabled={false}
+      type="button"
+    >
+      Submit
+    </button>
+  </div>
+</div>
+`;

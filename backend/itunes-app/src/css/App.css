@@ -1,0 +1,26 @@
+/* Styling for app.js */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  margin-top: 5%;
+  text-align: center;
+  margin-left: 1.5%;
+}
+
+.App h1 {
+  margin-bottom: 3%;
+  font-size: 6vw;
+  background: linear-gradient(to right, #ff5d51 5%, #9671fc 50%, #03c7fd 95%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.App hr {
+  width: 75%;
+  margin: 50px auto 0px auto;
+}
