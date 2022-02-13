@@ -24,6 +24,13 @@ app.use(express.json());
 // Routes
 app.use("/api", routes.router);
 
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "itunes-app/build")));
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "itunes-app", "build", "index.html"));
+  });
+}
+
 // listening on port 8000
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
