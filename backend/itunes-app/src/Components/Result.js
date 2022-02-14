@@ -75,11 +75,7 @@ function Result({
         className=" result shadow mb-5  rounded"
         style={{ width: "18rem", minHeight: "7rem" }}
       >
-        <Card.Img
-          style={{ height: "18rem" }}
-          variant="top"
-          src={artWork ? artWork : placeHolder}
-        />
+        <Card.Img style={{ height: "18rem" }} variant="top" src={placeHolder} />
         <Card.Body>
           <Card.Title>{collectionName}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">
