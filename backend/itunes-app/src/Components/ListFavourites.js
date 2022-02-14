@@ -15,7 +15,6 @@ function ListFavourites({ favourites, setFavourites }) {
             favourites={favourites}
             setFavourites={setFavourites}
             artistName={result.artistName}
-            artWork={result.artWork}
             collectionName={result.collectionName}
             id={result.id}
             kind={result.kind}

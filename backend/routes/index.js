@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const fs = require("fs");
 const request = require("request");
+const config = require("../config/config");
 
 // Getting items array from items.json
 const favouritesArr = () => {
@@ -69,7 +70,7 @@ const handleSearch = (req, res) => {
 
   request(
     {
-      url: `https://itunes.apple.com/search?term=${term}&media=${media}&limit=${limit}`,
+      url: `${config.ITUNES_URL}?term=${term}&media=${media}&limit=${limit}`,
     },
     (error, response, body) => {
       console.log(error, response, body);

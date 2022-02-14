@@ -10,7 +10,7 @@ function Result({
   favourites,
   setFavourites,
   artistName,
-  artWork,
+
   collectionName,
   id,
   kind,
@@ -29,7 +29,6 @@ function Result({
         id: id,
         artistName: artistName,
         collectionName: collectionName,
-        artWork: artWork,
         kind: kind,
         trackName: trackName,
       }),
@@ -40,7 +39,6 @@ function Result({
           id: id,
           artistName: artistName,
           collectionName: collectionName,
-          artWork: artWork,
           kind: kind,
           trackName: trackName,
         });
@@ -56,14 +54,14 @@ function Result({
         );
         // Set results list state
         setNewSearch(newSearch);
-
-        console.log(data);
       },
       (err) => {
         console.log(err);
       }
     );
   };
+
+  // Using placeholder image because the iTunes API creates a CORS issue for images when deployed to Heroku
 
   const placeHolder = require("../images/placeHolder.png");
 
@@ -75,11 +73,7 @@ function Result({
         className=" result shadow mb-5  rounded"
         style={{ width: "18rem", minHeight: "7rem" }}
       >
-        <Card.Img
-          style={{ height: "18rem" }}
-          variant="top"
-          src={artWork ? artWork : placeHolder}
-        />
+        <Card.Img style={{ height: "18rem" }} variant="top" src={placeHolder} />
         <Card.Body>
           <Card.Title>{collectionName}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">

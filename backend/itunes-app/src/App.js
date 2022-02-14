@@ -28,10 +28,6 @@ function App() {
       })
       .then(
         (data) => {
-          // Replacing stardard image size with larger ones
-          // data.results.forEach((r) => {
-          //   r.artworkUrl600 = r.artworkUrl100.replace("100x100", "600x600");
-          // });
           setNewSearch(data.results);
         },
         (err) => {

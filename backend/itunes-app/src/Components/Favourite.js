@@ -7,7 +7,6 @@ import { FAVOURITES_URL } from "../config/config";
 function Favourite({
   setFavourites,
   artistName,
-  artWork,
   collectionName,
   id,
   kind,
@@ -34,8 +33,10 @@ function Favourite({
         }
       );
   };
+  // Using placeholder image because the iTunes API creates a CORS issue for images when deployed to Heroku
 
   const placeHolder = require("../images/placeHolder.png");
+
   // Displaying the data from the api on a card with spme styling and a button.
   return (
     <div>
@@ -44,7 +45,7 @@ function Favourite({
         className=" result shadow mb-5 rounded"
         style={{ width: "18rem", minHeight: "7rem" }}
       >
-        <Card.Img style={{ height: "18rem" }} variant="top" src={artWork} />
+        <Card.Img style={{ height: "18rem" }} variant="top" src={placeHolder} />
         <Card.Body>
           <Card.Title>{collectionName}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">
