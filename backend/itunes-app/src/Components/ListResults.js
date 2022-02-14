@@ -18,7 +18,7 @@ function ListResults({ newSearch, setNewSearch, favourites, setFavourites }) {
             favourites={favourites}
             setFavourites={setFavourites}
             artistName={result.artistName}
-            artWork={result.artworkUrl600}
+            artWork={result.artworkUrl100}
             collectionName={result.collectionName}
             id={result.trackId ? result.trackId : result.collectionId}
             kind={result.kind ? result.kind : result.wrapperType}
