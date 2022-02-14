@@ -65,17 +65,7 @@ function Result({
     );
   };
 
-  const placeHolder = require("../images/movies.png");
-
-  const paths = {
-    featureMovie: require("../images/movies.png"),
-    tvEpisode: require("../images/tv-app.png"),
-    song: require("../images/music-notes.png"),
-  };
-
-  const imageHandler = () => {
-    return paths.song;
-  };
+  const placeHolder = require("../images/placeHolder.png");
 
   // Display card with styling and populated fields
   return (
@@ -85,7 +75,11 @@ function Result({
         className=" result shadow mb-5  rounded"
         style={{ width: "18rem", minHeight: "7rem" }}
       >
-        <Card.Img style={{ height: "18rem" }} variant="top" src={placeHolder} />
+        <Card.Img
+          style={{ height: "18rem" }}
+          variant="top"
+          src={artWork ? artWork : placeHolder}
+        />
         <Card.Body>
           <Card.Title>{collectionName}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">
