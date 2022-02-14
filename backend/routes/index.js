@@ -72,8 +72,9 @@ const handleSearch = (req, res) => {
       url: `https://itunes.apple.com/search?term=${term}&media=${media}&limit=${limit}`,
     },
     (error, response, body) => {
+      console.log(error, response, body);
       if (error || response.statusCode !== 200) {
-        return res.status(500).json({ type: "error", message: err.message });
+        return res.status(500).json({ type: "error", message: error });
       }
 
       res.json(JSON.parse(body));

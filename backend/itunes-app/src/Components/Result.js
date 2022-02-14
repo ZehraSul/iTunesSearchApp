@@ -65,6 +65,18 @@ function Result({
     );
   };
 
+  const placeHolder = require("../images/movies.png");
+
+  const paths = {
+    featureMovie: require("../images/movies.png"),
+    tvEpisode: require("../images/tv-app.png"),
+    song: require("../images/music-notes.png"),
+  };
+
+  const imageHandler = () => {
+    return paths.song;
+  };
+
   // Display card with styling and populated fields
   return (
     <div>
@@ -73,7 +85,7 @@ function Result({
         className=" result shadow mb-5  rounded"
         style={{ width: "18rem", minHeight: "7rem" }}
       >
-        <Card.Img style={{ height: "18rem" }} variant="top" src={artWork} />
+        <Card.Img style={{ height: "18rem" }} variant="top" src={placeHolder} />
         <Card.Body>
           <Card.Title>{collectionName}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">
@@ -85,7 +97,7 @@ function Result({
             variant="secondary"
             onClick={favouriteHandler}
           >
-            <i class="fa fa-heart"></i>
+            <i className="fa fa-heart"></i>
           </Button>
         </Card.Body>
         <Card.Footer>

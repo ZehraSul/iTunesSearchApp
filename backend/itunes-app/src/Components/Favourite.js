@@ -54,7 +54,7 @@ function Favourite({
             variant="danger"
             onClick={DeleteFavouriteHandler}
           >
-            <i class="fa fa-heart"></i>
+            <i className="fa fa-heart"></i>
           </Button>
         </Card.Body>
         <Card.Footer>
